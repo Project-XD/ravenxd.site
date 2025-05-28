@@ -51,7 +51,7 @@
                         <div>
                             <h3 class="font-semibold text-gray-300 mb-2">Anticheat</h3>
                             <div class="flex flex-wrap gap-2">
-                                {#each anticheats as ac}
+                                {#each anticheats as ac (ac)}
                                     <span class="px-2 py-1 bg-gray-700 rounded text-xs">
                                         {ac}
                                     </span>
