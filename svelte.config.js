@@ -8,12 +8,10 @@ const config = {
 			pages: 'build',
 			assets: 'build',
 			fallback: '404.html',
-			precompress: false
+			strict: false // Allows dynamic routes
 		}),
-		paths: {
-			base: '',
-			assets: '',
-			relative: true,
+		prerender: {
+			entries: ['*'] // Prerender all possible routes
 		}
 	},
 	preprocess: vitePreprocess()
