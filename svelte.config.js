@@ -11,8 +11,9 @@ const config = {
 			precompress: false
 		}),
 		paths: {
-			base: process.env.NODE_ENV === 'production' ? '/ravenxd.site' : '',
-			assets: process.env.NODE_ENV === 'production' ? 'https://yourusername.github.io/ravenxd.site' : ''
+			base: '',
+			assets: '',
+			relative: true,
 		}
 	},
 	preprocess: vitePreprocess()
