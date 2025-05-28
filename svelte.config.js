@@ -1,20 +1,23 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
-export default {
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
+	preprocess: vitePreprocess(),
 	kit: {
 		adapter: adapter({
+			fallback: '404.html',
 			pages: 'build',
 			assets: 'build',
-			fallback: '404.html',
+			precompress: false,
 			strict: false
 		}),
 		paths: {
-			base: process.env.NODE_ENV === 'production' ? '/ravenxd.site' : ''
+			base: '', // Keep empty for root deployment
+			relative: true // This makes paths relative
 		},
-		prerender: {
-			entries: ['*']
-		}
-	},
-	preprocess: vitePreprocess()
+		appDir: 'app'
+	}
 };
+
+export default config;
